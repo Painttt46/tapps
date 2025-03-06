@@ -8,19 +8,20 @@ const ResponseDisplay = ({ data, error, viewMode }) => {
             ) : (
                 <>
                     {viewMode === "json" ? (
-                        <pre className="whitespace-pre-wrap break-words text-sm text-gray-800">
+                        <pre className="whitespace-pre-wrap break-words text-sm text-gray-900">
                             {data ? JSON.stringify(data, null, 2) : "No data available"}
                         </pre>
                     ) : (
                         data && Object.keys(data).length > 0 ? (
                             Object.entries(data).map(([key, value], index) => (
                                 <div key={index} className="mb-6">
-                                    <h3 className="text-lg font-semibold mb-2 text-gray-800">{key}</h3>
+                                    <h3 className="text-lg font-semibold mb-2 text-gray-900">index : {key}</h3>
+                                    
                                     {renderTable(value)}
                                 </div>
                             ))
                         ) : (
-                            <p className="text-gray-800">No data available</p>
+                            <p className="text-gray-900">No data available</p>
                         )
                     )}
                 </>

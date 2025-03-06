@@ -1,6 +1,7 @@
 const navItems = [
     { name: "Home", href: "/" },
-    { name: "API TEST", href: "/apitest" },
+    { name: "API Test", href: "/apitest" },
+    { name: "Log Viewer", href: "/logviewer" },
     
 ];
 

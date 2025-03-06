@@ -8,18 +8,18 @@ export default function Navbar() {
 
     return (
         <div>
-            <nav className="block w-full max-w-screen px-4 py-4 mx-auto bg-blue-700 bg-opacity-10 sticky top-3 shadow-lg lg:px-8 backdrop-blur-lg backdrop-saturate-150 z-[9999]">
-                <div className="container flex flex-wrap items-center justify-between mx-auto text-white font-poppins">
+            <nav className="block w-full max-w-screen px-4 py-4 mx-auto bg-gradient-to-r from-blue-400 to-blue-900 sticky top-3 shadow-lg lg:px-8 backdrop-blur-lg backdrop-saturate-150 z-[9999]">
+                <div className="container flex flex-wrap items-center justify-between mx-auto font-poppins">
 
                     <a
-                        className="mr-4 block cursor-pointer py-1.5 text-transparent font-bold text-3xl lg:text-3xl bg-gradient-to-r from-yellow-400 to-pink-300 bg-clip-text"
+                        className="mr-4 block cursor-pointer py-1.5 text-transparent font-black text-3xl lg:text-3xl bg-gradient-to-r from-red-900 to-orange-900 bg-clip-text" style={{ fontSize: '34px' }}
                     >
                         ProjectName
                     </a>
 
                     <div className="lg:hidden">
                         <button
-                            className="text-white"
+                            className="text-black"
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                         >
                             <svg
@@ -44,7 +44,7 @@ export default function Navbar() {
                             {navItems.map((item, index) => (
                                 <li
                                     key={index}
-                                    className="flex items-center text-lg gap-x-2 text-white font-semibold hover:bg-gray-400 hover:text-white rounded-md transition-all px-4 py-2 h-8"
+                                    className="flex items-center text-lg gap-x-2 text-white font-bold hover:bg-purple-300 hover:text-black rounded-md transition-all px-4 py-2 h-8"
 
                                 >
                                     <Link href={item.href} className="flex items-center">
@@ -56,12 +56,12 @@ export default function Navbar() {
                     </div>
 
                     {isMenuOpen && (
-                        <div className="lg:hidden absolute top-16 left-0 w-full bg-blue-600 text-white p-4">
+                        <div className="lg:hidden absolute top-16 left-0 w-full bg-gradient-to-r from-blue-400 to-blue-900 text-white p-4">
                             <ul className="flex flex-col gap-4">
                                 {navItems.map((item, index) => (
                                     <li
                                         key={index}
-                                        className="flex items-center text-lg gap-x-2 text-white font-semibold hover:bg-gray-400 hover:text-white rounded-md transition-all px-4 py-2 h-8"
+                                        className="flex items-center text-lg gap-x-2 text-white font-bold hover:bg-purple-300 hover:text-black rounded-md transition-all px-4 py-2 h-8"
 
                                     >
                                         <Link href={item.href} className="flex items-center">
