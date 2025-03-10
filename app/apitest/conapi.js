@@ -5,7 +5,7 @@ export async function getDataFromAPI(url, method = "GET", headers = {}, body = n
           headers: {
               "Content-Type": "application/json",
           },
-          cache: "no-store",
+          
       };
 
       if (method === "POST" && body) {
