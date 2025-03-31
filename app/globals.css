@@ -114,6 +114,10 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -121,5 +125,30 @@
   body {
     @apply bg-background text-foreground;
   }
+  html, body {
+    overflow: hidden; /* ซ่อน scrollbar */
+    height: 100%;
+  }
+  .password-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .password-input {
+    padding-right: 30px; /* ให้มีพื้นที่ว่างสำหรับไอคอน */
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 10px; /* จัดตำแหน่งไอคอนให้ด้านขวาของ input */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
 }
+
+
+
 

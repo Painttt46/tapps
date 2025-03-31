@@ -1,6 +1,8 @@
+"use client";
 import { Poppins } from 'next/font/google';
-import Navbar from "@/components/navbar";
+import Navbar from "../components/navbar";
 import './globals.css';
+import { usePathname } from 'next/navigation';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -9,10 +11,12 @@ const poppins = Poppins({
 });
 
 export default function Layout({ children }) {
+  const pathname = usePathname();
+
   return (
     <html lang="en" className={poppins.variable}>
       <body className="font-poppins">
-        <Navbar />
+        {pathname !== '/login' && <Navbar />}
         <div style={{ padding: '20px' }}>
           {children}
         </div>

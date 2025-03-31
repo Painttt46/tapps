@@ -1,8 +1,10 @@
+
 export default function Page() {
-  return(
+  return (
     <>
-      <h1>Home</h1>
-      
+
+
+
     </>
   )
 }

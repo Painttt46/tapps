@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useApiRequest } from "./api_request";
 import ResponseDisplay from "./api_responds";
 
+
 export default function Page() {
     const {
         data,
@@ -27,14 +28,14 @@ export default function Page() {
     };
 
     return (
-        <div className="flex h-screen w-full bg-white flex space-x-4">
-            {/*API Request Form*/}
+        <div className="flex h-screen w-full bg-white space-x-4">
+
             <div className="w-1/2 p-8 bg-blue-200 shadow-lg overflow-y-auto rounded-2xl">
                 <h2 className="text-2xl font-extrabold mb-6 text-gray-800" style={{ fontSize: '26px' }}>API Request Tool</h2>
 
                 <div className="space-y-6">
                     <div>
-                        <label className="block text-sm font-bold text-gray-800"style={{ fontSize: '16px' }}>URL</label>
+                        <label className="block text-sm font-bold text-gray-800" style={{ fontSize: '16px' }}>URL</label>
                         <input
                             type="text"
                             value={url}
@@ -83,7 +84,7 @@ export default function Page() {
                 </div>
             </div>
 
-            {/*API Response*/}
+
             <div className="w-1/2 p-8 bg-gray-300 overflow-y-auto rounded-2xl">
                 <div className="mb-4">
                     <h2 className="text-xl font-extrabold text-gray-800" style={{ fontSize: '28px' }}>Response</h2>

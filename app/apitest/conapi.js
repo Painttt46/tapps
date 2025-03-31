@@ -1,25 +1,29 @@
+"use server"
+import { cookies } from 'next/headers';
 export async function getDataFromAPI(url, method = "GET", headers = {}, body = null) {
-  try {
-      const options = {
-          method,
-          headers: {
-              "Content-Type": "application/json",
-          },
-          
-      };
+    const cookieStore = await cookies();
+    const accessToken = cookieStore.get('accessToken')?.value;
+    try {
+        const options = {
+            method,
+            headers: {
+                "x-access-token": accessToken,
+                "Content-Type": "application/json",
+            },
 
-      if (method === "POST" && body) {
-          options.body = JSON.stringify(body);
-      }
+        };
 
-      const res = await fetch(url, options);
+        if (method === "POST" && body) {
+            options.body = JSON.stringify(body);
+        }
 
-      if (!res.ok) {
-          throw new Error("Failed to fetch data");
-      }
+        const res = await fetch(url, options);
 
-      return await res.json();
-  } catch (error) {
-      return { error: error.message };
-  }
+
+
+
+        return await res.json();
+    } catch (error) {
+        return { error: error.message };
+    }
 }

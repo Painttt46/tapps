@@ -1,8 +1,11 @@
+
 import { useState } from "react";
 import { getDataFromAPI } from "./conapi";
+
+
 export const useApiRequest = (initialUrl = "", initialMethod = "GET", initialBody = "") => {
+    
     const [data, setData] = useState(null);
-    const [error, setError] = useState(null);
     const [url, setUrl] = useState(initialUrl);
     const [method, setMethod] = useState(initialMethod);
     const [body, setBody] = useState(initialBody);
@@ -13,14 +16,12 @@ export const useApiRequest = (initialUrl = "", initialMethod = "GET", initialBod
             setData(result);
             setError(null);
         } catch (err) {
-            setError(err.message);
-            setData(null);
+            return { error: err.message };
         }
     };
 
     return {
         data,
-        error,
         url,
         setUrl,
         method,
